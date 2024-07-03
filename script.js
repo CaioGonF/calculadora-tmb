@@ -1,8 +1,6 @@
 console.log("Teste");
 
 // Calculo
-const calculoBotao = document.querySelector(".botao");
-
 function calcular() {
   const sexo = document.querySelector("#sexo");
   console.log(sexo.value);
@@ -62,11 +60,10 @@ function calcular() {
     caloriaManter.innerHTML = caloriaTotal;
     console.log(caloriaTotal);
   } else {
-    console.log("Digite os valores");
+    alert("Preencha todos os campos para prosseguir!");
+    return;
   }
 }
-
-calculoBotao.addEventListener("click", calcular);
 
 // Formulas
 

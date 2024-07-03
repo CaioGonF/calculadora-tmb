@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Taxa Metabólica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="bottom40">Calculadora de Taxa de Matabolismo Basal (TMB)</h1>
+  </header>
+  <article aria-label="tmb-definicao">
+    <p class="bottom20"><span class="bold bottom20 block">O que é a taxa de matabolismo basal?</span>
+      Metabolismo basal ou Taxa metabólica basal é um método matemático de calcular a quantidade calórica que o corpo necessita, em vinte e quatro horas, para manter-se nutrido durante o decorrer das atividades diárias, e/ou fazendo um jejum de pelo menos doze horas em repouso, sem prejudicar o funcionamento dos principais órgãos.
+    </p>
+  </article>
+  <main>
+    <div class="bottom40">
+      <div class="bottom10">
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Femínino</option>
+        </select>
+      </div>
+
+      <div class="bottom10">
+        <label for="idade">idade:</label>
+        <input type="number" id="idade" name="idade" placeholder="Sua idade" required>
+      </div>
+
+      <h3 class="bottom10">Nível de atividade física:</h3>
+      <div class="nivelAtividade bottom20">
+        <input type="radio" name="atividade" value="nenhuma" id="atividade" checked="checked">
+        <label for="nenhuma">Nenhuma </label>
+
+        <input type="radio" name="atividade" value="moderada" id="atividade">
+        <label for="moderada">Moderada <span class="descricao">(meia hora de caminhada, natação ou bicicleta, quatro vezes por semana)</span></label>
+        <input type="radio" name="atividade" value="intensa" id="atividade">
+        <label for="intensa">Intensa <span class="descricao">(uma hora de corrida, pelo menos quatro vezes por semana) </span></label>
+      </div>
+      <div class="bottom10">
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" placeholder="Seu peso em Kg" required>
+      </div>
+      <div class="bottom20">
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" name="altura" placeholder="Sua altura em cm" required>
+      </div>
+      <div class="containerResultado">
+        <div>
+          <button class="botao">Calcular</button>
+        </div>
+        <div class="bold"> Resultado: <span id="caloriaTotal">2000</span></div>
+      </div>
+    </div>
+    <article class="bottom40" aria-label="dicas">
+      <h3 class="bottom10">Para perder peso</h3>
+      <p class="bottom20">Para perder peso evitando perder quantidade significativa de massa muscular, basta consumir entre <span id="caloriaPerderMin">1400</span> e <span id="caloriaPerderMax">1600</span> calorias</p>
+      <h3 class="bottom10">Para manter peso</h3>
+      <p class="bottom20">Para manter o peso evitando perder quantidade significativa de massa muscular, basta consumir <span id="caloriaManter">1600</span> calorias</p>
+      <h3 class="bottom10">Para ganhar peso</h3>
+      <p>Para ganhar peso evitando ganhar quantidade significativa de gordura, basta consumir entre <span id="caloriaGanharMin">2400</span> e <span id="caloriaGanharMax">2600</span> calorias</p>
+
+    </article>
+  </main>
+  <br>
+
+  <footer>
+    <article aria-label="dicas">
+      <h2 class="bottom20">COMO CALCULAR A TAXA DE METABOLISMO BASAL (TMB)?</h2>
+      <p>Como se trata de uma estimativa, e não de um cálculo preciso, a Taxa Metabólica Basal (TMB) pode ser calculada de diversas maneiras, sendo alguns exemplos: </p>
+      <dl>
+        <div class="grid">
+          <dt class="bottom10" id="formula1"><button class="bold" aria-controls="formula1" aria-expanded="false">FÓRMULA REVISADA DE HARRIS-BENEDICT</button>
+          </dt>
+        </div>
+        <div>
+          <dd class="bottom10" id="formula1">A versão original, publicada em 1919, foi revisada e atualizada por Roza e Shizgal em 1984. É essencialmente a mesma metodologia, porém com cálculos mais precisos e contemporâneos.<br><br>TMB (homens) = 88,362 + (13,397 × peso em kg) + (4,799 × altura em cm) – (5,677 × idade em anos).<br><br>
+            Por exemplo, para um homem de 80 kg, 1,75m e 40 anos, o cálculo seria:<br><br>
+
+            88, 362 + (13,397 × 80) + (4,799 × 175) – (5,677 × 40);<br><br>
+            88,362 + 1.071,76 + 839,825 – 227,08 = 1.772,867 calorias. <br><br>
+            A fórmula para as mulheres é um pouco diferente:<br>
+
+            TMB (mulheres) = 447,593 + (9,247 × peso em kg) + (3,098 × altura em cm) – (4,330 × idade em anos).</dd>
+        </div>
+        <div>
+          <dt class="bottom10 " id="formula2"><button class="bold" aria-controls="formula2" aria-expanded="false">FÓRMULA DE MIFFLIN-ST JEOR</button>
+          </dt>
+          <dd class="bottom10" id="formula2">TMB (homens) = (10 × peso em kg) + (6,25 × altura em cm) – (5 × idade em anos) + 5.<br><br>
+            O mesmo homem exemplificado acima aqui apareceria com uma TMB de 2.088,75 calorias mínimas diárias para viver perfeitamente. <br><br>
+
+            TMB (mulheres) = (10 × peso em kg) + (6,25 × altura em cm) – (5 × idade em anos) – 161.</dd>
+        </div>
+        <div>
+          <dt class="bottom10" id="formula3"><button class="bold" aria-controls="formula3" aria-expanded="false">FÓRMULA DE KATCH-MCARDLE</button>
+          </dt>
+          <dd class="bottom10" id="formula3">TMB = 370 + (21,6 × massa magra em kg).</dd>
+        </div>
+        <div>
+          <dt class="bottom10" id="formula4">
+            <button class="bold" aria-controls="formula4" aria-expanded="false">
+              FÓRMULA DE OWEN</button>
+          </dt>
+          <dd class="bottom10" id="formula4">TMB = (0,879 × peso em kg) + (10,2 × altura em cm) – (5,23 × idade em anos) – 161.
+          </dd>
+        </div>
+        <div>
+          <dt class="bottom10" id="formula5"><button class="bold" aria-controls="formula5" aria-expanded="false">FÓRMULA DE CUNNINGHAM</button>
+          </dt>
+          <dd class="bottom10" id="formula5">TMB = 500 + (22 × massa magra em kg).</dd>
+        </div>
+      </dl>
+      <p>Aqui nessa calculadora utilizamos a <span class="bold"> FÓRMULA REVISADA DE HARRIS-BENEDICT.</span></p>
+    </article>
+
+  </footer>
+</body>
+
+<script src="./script.js"></script>
+
+</html>
